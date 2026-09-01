@@ -28,7 +28,7 @@ UI flavor uses scroll-like panels, dungeon iconography, and warren-inspired envi
 
 ## Documentation Index
 
-- `/home/runner/work/goblins-gold-hoard/goblins-gold-hoard/DESIGN.md`
-- `/home/runner/work/goblins-gold-hoard/goblins-gold-hoard/HIVE.md`
-- `/home/runner/work/goblins-gold-hoard/goblins-gold-hoard/SPEC.md`
-- `/home/runner/work/goblins-gold-hoard/goblins-gold-hoard/CHARACTER_ROSTER.md`
+- `DESIGN.md`
+- `HIVE.md`
+- `SPEC.md`
+- `CHARACTER_ROSTER.md`

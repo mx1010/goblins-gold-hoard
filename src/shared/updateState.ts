@@ -327,7 +327,7 @@ export function manualInstallSteps(platform: string): { os: string; steps: strin
     return {
       os: 'macOS',
       steps: [
-        'Open the .dmg and drag Goblin's Gold Hoard onto Applications. Choose Replace when asked.',
+        "Open the .dmg and drag Goblin's Gold Hoard onto Applications. Choose Replace when asked.",
         'Quit this app, open the new one from Applications, and pick the same project.'
       ]
     };
@@ -337,7 +337,7 @@ export function manualInstallSteps(platform: string): { os: string; steps: strin
       os: 'Windows',
       steps: [
         'Quit this app, then run the downloaded setup .exe. It replaces the installed version.',
-        'Open Goblin's Gold Hoard again and pick the same project.'
+        "Open Goblin's Gold Hoard again and pick the same project."
       ]
     };
   }

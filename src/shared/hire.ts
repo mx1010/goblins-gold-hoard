@@ -25,6 +25,7 @@ import { mcpCatalogEntry } from './mcpCatalog';
 import { MAX_AGENT_TOKEN_CAP } from './tokenCaps';
 
 export const HIRE_SPEC_V1 = 'goblins-gold-hoard/hire@1';
+export const LEGACY_HIRE_SPEC_V1 = 'munder-difflin/hire@1';
 
 /** Skill ids bundled in app resources (the only values a hire manifest may request
  *  in the `skills` field). A manifest can never name an arbitrary skill path —
@@ -174,8 +175,11 @@ export function validateHireManifest(raw: unknown): HireValidation {
   }
   const o = raw as Record<string, unknown>;
 
-  if (o.spec !== HIRE_SPEC_V1) {
-    return { ok: false, errors: [`unsupported spec "${String(o.spec)}" (expected "${HIRE_SPEC_V1}")`] };
+  if (o.spec !== HIRE_SPEC_V1 && o.spec !== LEGACY_HIRE_SPEC_V1) {
+    return {
+      ok: false,
+      errors: [`unsupported spec "${String(o.spec)}" (expected "${HIRE_SPEC_V1}" or legacy "${LEGACY_HIRE_SPEC_V1}")`]
+    };
   }
 
   const name = capped(o.name, 40, 'name', errors, true);
@@ -322,7 +326,7 @@ export function validateHireManifest(raw: unknown): HireValidation {
 export function parseHireDeepLink(link: string): string | null {
   let u: URL;
   try { u = new URL(link); } catch { return null; }
-  if (u.protocol !== 'goblinsgoldhoard:') return null;
+  if (u.protocol !== 'goblinsgoldhoard:' && u.protocol !== 'munderdifflin:') return null;
   // Both goblinsgoldhoard://hire?src= (host) and goblinsgoldhoard:hire?src= (path).
   const action = (u.host || u.pathname.replace(/^\/+/, '')).toLowerCase();
   if (action !== 'hire') return null;

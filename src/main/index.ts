@@ -2228,7 +2228,7 @@ function createWindow(opts: { floor?: boolean } = {}): BrowserWindow {
     ...(geom && geom.x !== undefined && geom.y !== undefined ? { x: geom.x, y: geom.y } : {}),
     minWidth: MIN_WIN.width,
     minHeight: MIN_WIN.height,
-    title: isFloor ? 'Goblin's Gold Hoard — Floor' : 'Goblin's Gold Hoard',
+    title: isFloor ? "Goblin's Gold Hoard — Floor" : "Goblin's Gold Hoard",
     backgroundColor: '#FFF8E7',
     titleBarStyle: 'hiddenInset',
     show: false,

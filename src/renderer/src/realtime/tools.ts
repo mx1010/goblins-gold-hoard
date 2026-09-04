@@ -602,7 +602,7 @@ export function realtimeReadTools(): ReturnType<typeof tool>[] {
     tool({
       name: 'get_app_info',
       description:
-        'About the Goblin's Gold Hoard app itself: the running version and the latest release notes (changelog). Use for "what version is this" or "what is new in this release".',
+        `About the Goblin's Gold Hoard app itself: the running version and the latest release notes (changelog). Use for "what version is this" or "what is new in this release".`,
       parameters: { type: 'object', properties: {}, required: [], additionalProperties: false },
       execute: () =>
         spoken(async () => {

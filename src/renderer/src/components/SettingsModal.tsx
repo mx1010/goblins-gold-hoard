@@ -63,7 +63,7 @@ const triggersApi = (): TriggersApi => window.cth as unknown as TriggersApi;
 /** Process-unique id for a new webhook — it is the path segment callers POST to,
  *  so it must be stable and collision-free across renames. */
 function newWebhookId(): string {
-  return `wh-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+  return `wh-${Date.now().toString(36)}-${globalThis.crypto.randomUUID().replace(/-/g, '').slice(0, 12)}`;
 }
 
 /** Pixel-aesthetic text input, mirroring AddAgentModal's inputStyle. */

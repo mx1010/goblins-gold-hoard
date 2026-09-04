@@ -163,8 +163,11 @@ export class IntegrationBroker {
     if (typeof x === 'string' && x) return x;
     const auth = req.headers['authorization'];
     if (typeof auth === 'string') {
-      const m = /^Bearer\s+(.+)$/i.exec(auth.trim());
-      if (m) return m[1].trim();
+      const trimmed = auth.trim();
+      if (trimmed.length >= 7 && trimmed.slice(0, 7).toLowerCase() === 'bearer ') {
+        const token = trimmed.slice(7).trim();
+        if (token) return token;
+      }
     }
     return undefined;
   }

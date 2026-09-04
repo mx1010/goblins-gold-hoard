@@ -1,0 +1,9 @@
+{
+  "_comment": "Settings hero card payload for Goblin's Gold Hoard. Data only; every field renders as escaped text.",
+  "plan": {
+    "label": "Goblin Warren",
+    "blurb": "Every agent runs in your warren, on your machine, in your folders, under your own keys. Route quests locally, keep the loot, and scale the raid crew without seat limits."
+  },
+  "sponsor": null,
+  "notice": "Fantasy skin applied to the Goblin's Gold Hoard harness core."
+}
